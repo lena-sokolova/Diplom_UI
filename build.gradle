@@ -30,7 +30,6 @@ allure {
 }
 
 dependencies {
-    implementation 'junit:junit:4.13.1'
     testImplementation(
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
