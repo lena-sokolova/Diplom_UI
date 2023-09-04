@@ -1,6 +1,7 @@
 package com.afterlogic.tests;
 
 import com.afterlogic.pages.MainPage;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -11,6 +12,7 @@ public class MainPageTests extends TestBase {
     TestData testData = new TestData();
 
     @Test
+    @Owner("Elena Sokolova")
     @Tag("smoke")
     @DisplayName("Успешное открытие главной страницы")
     void successfulOpenMainPageTest() {
@@ -20,6 +22,7 @@ public class MainPageTests extends TestBase {
     }
 
     @Test
+    @Owner("Elena Sokolova")
     @Tag("smoke")
     @DisplayName("Проверка наличия всех табов на странице")
     void checkTabsTitlesTest() {
@@ -29,6 +32,7 @@ public class MainPageTests extends TestBase {
     }
 
     @Test
+    @Owner("Elena Sokolova")
     @Tag("smoke")
     @DisplayName("Проверка наличия всех продуктов в каталоге")
     void checkProductsTest() {
@@ -39,6 +43,7 @@ public class MainPageTests extends TestBase {
     }
 
     @Test
+    @Owner("Elena Sokolova")
     @DisplayName("Проверка заполнения формы обратной связи")
     void checkContactUsFormTest() {
         mainPage
@@ -54,6 +59,7 @@ public class MainPageTests extends TestBase {
     }
 
     @Test
+    @Owner("Elena Sokolova")
     @DisplayName("Проверка перехода в раздел новостей")
     void checkNewsSectionTest() {
         mainPage
@@ -63,6 +69,7 @@ public class MainPageTests extends TestBase {
     }
 
     @Test
+    @Owner("Elena Sokolova")
     @DisplayName("Проверка перехода в раздел политики конфиденциальности")
     void checkPrivacyPolicySectionTest() {
         mainPage
