@@ -4,8 +4,7 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import java.util.List;
-
+import static com.afterlogic.tests.TestData.*;
 import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Configuration.baseUrl;
@@ -13,19 +12,6 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage {
-
-    String successOpenPageText = "Afterlogic Corp. is an award-winning technological company";
-    List<String> tabsTitles = List.of("Products", "Purchase", "Support", "Our Clients", "Services", "About");
-    List<String> productNames = List.of("Afterlogic Aurora Corporate", "Afterlogic WebMail Pro PHP",
-            "Afterlogic WebMail Pro ASP.NET", "Afterlogic ActiveServer", "Afterlogic MailSuite Pro for Linux",
-            "MailBee.NET Objects", "MailBee Objects");
-    String productsListName = "All Products";
-    String contactFormName = "Contact";
-    String successSendMessageText = "Thank you for your inquiry.\n" +
-            "Your message will be processed as soon as possible.";
-    String newsSectionName = "News";
-    String newsTitle = "Release of Aurora Corporate and WebMail Pro 9.7.1";
-    String privacyPolicyTitleName = "Privacy policy";
 
     SelenideElement
             homeText = $(".home-hero"),
