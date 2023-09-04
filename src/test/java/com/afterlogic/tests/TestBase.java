@@ -13,6 +13,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
+import static com.codeborne.selenide.Selenide.closeWebDriver;
+
 public class TestBase {
 
     static WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
@@ -50,8 +52,7 @@ public class TestBase {
         if (config.isRemote()) {
             Attach.addVideo();
         }
-
-//        closeWebDriver();
+        closeWebDriver();
     }
 }
 
