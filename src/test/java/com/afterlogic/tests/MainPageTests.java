@@ -38,7 +38,6 @@ public class MainPageTests extends TestBase {
                 .checkProductTitles();
     }
 
-//    @Disabled
     @Test
     @DisplayName("Проверка заполнения формы обратной связи")
     void checkContactUsFormTest() {
@@ -52,6 +51,15 @@ public class MainPageTests extends TestBase {
                 .setMessage(testData.message)
                 .clickSendBtn()
                 .checkSuccessSendMessageText();
+    }
+
+    @Test
+    @DisplayName("Проверка перехода в раздел новостей")
+    void checkNewsSectionTest() {
+        mainPage
+                .openPage()
+                .openNews()
+                .checkOpenNewsSection();
     }
 
     @Test

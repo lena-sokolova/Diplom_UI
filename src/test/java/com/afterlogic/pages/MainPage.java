@@ -23,6 +23,8 @@ public class MainPage {
     String contactFormName = "Contact";
     String successSendMessageText = "Thank you for your inquiry.\n" +
             "Your message will be processed as soon as possible.";
+    String newsSectionName = "News";
+    String newsTitle = "Release of Aurora Corporate and WebMail Pro 9.7.1";
     String privacyPolicyTitleName = "Privacy policy";
 
     SelenideElement
@@ -38,6 +40,8 @@ public class MainPage {
             message = $("#jform_message"),
             sendBtn = $(".button"),
             sendMessageText = $(".alert-message"),
+            newsLink = $("[href='/news']"),
+            newsTextTitle = $("h2.title"),
             privacyPolicyLink = $("[href='/privacy-policy']"),
             privacyPolicyTitle = $("h1");
 
@@ -122,6 +126,19 @@ public class MainPage {
     @Step("Проверяем, что сообщение успешно отправлено")
     public MainPage checkSuccessSendMessageText() {
         sendMessageText.shouldHave(text(successSendMessageText));
+        return this;
+    }
+
+    @Step("Открываем раздел новостей")
+    public MainPage openNews() {
+        aboutTab.hover().$(byText(newsSectionName)).hover();
+        newsLink.click();
+        return this;
+    }
+
+    @Step("Проверяем успешный переход на страницу новостей")
+    public MainPage checkOpenNewsSection() {
+        newsTextTitle.shouldHave(text(newsTitle));
         return this;
     }
 
