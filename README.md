@@ -65,7 +65,7 @@ ${TASK}
 - <code>REMOTE_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
 - <code>VIDEO_STORAGE</code> - адрес удаленного сервера, по которому можно получить видео.
 
-Для запуска [сборки](https://jenkins.autotests.cloud/job/hw15_afterlogicTests/) необходимо перейти в раздел <code>Собрать с параметрами</code>, указать нужные параметры и нажать кнопку <code>Собрать</code>.
+Для запуска [сборки](https://jenkins.autotests.cloud/job/qa_guru_20_Diplom_UI/) необходимо перейти в раздел <code>Собрать с параметрами</code>, указать нужные параметры и нажать кнопку <code>Собрать</code>.
 <p align="center">
 <img title="Jenkins Build" src="media/screenshots/job.png">
 </p>
