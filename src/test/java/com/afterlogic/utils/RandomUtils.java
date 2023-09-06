@@ -12,8 +12,8 @@ public class RandomUtils {
             sb.append(AB.charAt(rnd.nextInt(AB.length())));
         return sb.toString();
     }
-        public static String getRandomMessage() {
-            return getRandomString(10);
-        }
-}
 
+    public static String getRandomMessage() {
+        return getRandomString(10);
+    }
+}

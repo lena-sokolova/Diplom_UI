@@ -78,4 +78,3 @@ public class MainPageTests extends TestBase {
                 .checkOpenPrivacyPolicyTerms();
     }
 }
-
