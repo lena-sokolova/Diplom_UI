@@ -1,4 +1,7 @@
 # Проект по автоматизации тестирования сайта Afterlogic.com
+<p align="center">
+<img title="AfterlogicLogo" src="media/icons/logo.png">
+
 ## :scroll: Содержание:
 
 - [Используемый стек](#computer-используемый-стек)
