@@ -63,11 +63,11 @@ ${TASK}
 -DremoteUrl=${REMOTE_URL}
 ```
 ### Параметры сборки
+- <code>BASE_URL</code> – адрес тестируемого ресурса.
 - <code>BROWSER</code> – браузер (по умолчанию chrome).
 - <code>BROWSER_VERSION</code> – версия браузера (по умолчанию 100.0).
 - <code>BROWSER_SIZE</code> – размер окна браузера (по умолчанию 1920x1080).
 - <code>REMOTE_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
-- <code>VIDEO_STORAGE</code> - адрес удаленного сервера, по которому можно получить видео.
 
 Для запуска [сборки](https://jenkins.autotests.cloud/job/qa_guru_20_Diplom_UI/) необходимо перейти в раздел <code>Собрать с параметрами</code>, указать нужные параметры и нажать кнопку <code>Собрать</code>.
 <p align="center">
