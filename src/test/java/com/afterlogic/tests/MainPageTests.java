@@ -1,14 +1,20 @@
 package com.afterlogic.tests;
 
-import com.afterlogic.pages.MainPage;
+import com.afterlogic.pages.*;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import static com.afterlogic.tests.TestData.*;
+
 public class MainPageTests extends TestBase {
 
     MainPage mainPage = new MainPage();
+    ProductsListPage openProductsListPage = new ProductsListPage();
+    ContactFormPage contactFormPage = new ContactFormPage();
+    NewsPage newsPage = new NewsPage();
+    PrivacyPolicyPage privacyPolicyPage = new PrivacyPolicyPage();
     TestData testData = new TestData();
 
     @Test
@@ -37,9 +43,10 @@ public class MainPageTests extends TestBase {
     @DisplayName("Проверка наличия всех продуктов в каталоге")
     void checkProductsTest() {
         mainPage
-                .openPage()
+                .openPage();
+        openProductsListPage
                 .openAllProductsList()
-                .checkProductTitles();
+                .checkProductTitles(productNames);
     }
 
     @Test
@@ -47,7 +54,8 @@ public class MainPageTests extends TestBase {
     @DisplayName("Проверка заполнения формы обратной связи")
     void checkContactUsFormTest() {
         mainPage
-                .openPage()
+                .openPage();
+        contactFormPage
                 .openContactForm()
                 .setCompanyName(testData.companyName)
                 .setYourName(testData.userName)
@@ -55,7 +63,7 @@ public class MainPageTests extends TestBase {
                 .setEmail(testData.userEmail)
                 .setMessage(testData.message)
                 .clickSendBtn()
-                .checkSuccessSendMessageText();
+                .checkSuccessSendMessageText(successSendMessageText);
     }
 
     @Test
@@ -63,9 +71,10 @@ public class MainPageTests extends TestBase {
     @DisplayName("Проверка перехода в раздел новостей")
     void checkNewsSectionTest() {
         mainPage
-                .openPage()
+                .openPage();
+        newsPage
                 .openNews()
-                .checkOpenNewsSection();
+                .checkOpenNewsSection(newsTitle);
     }
 
     @Test
@@ -73,8 +82,9 @@ public class MainPageTests extends TestBase {
     @DisplayName("Проверка перехода в раздел политики конфиденциальности")
     void checkPrivacyPolicySectionTest() {
         mainPage
-                .openPage()
+                .openPage();
+        privacyPolicyPage
                 .openPrivacyPolicyTerms()
-                .checkOpenPrivacyPolicyTerms();
+                .checkOpenPrivacyPolicyTerms(privacyPolicyTitleName);
     }
 }
