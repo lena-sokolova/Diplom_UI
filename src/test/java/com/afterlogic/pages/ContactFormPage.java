@@ -1,18 +1,13 @@
 package com.afterlogic.pages;
 
-import com.afterlogic.tests.TestData;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static com.afterlogic.tests.TestData.contactFormName;
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class ContactFormPage {
     private SelenideElement
-            aboutTab = $(".item112"),
-            contactUsLink = $("[href='/contact']"),
             companyName = $("#jform_company"),
             yourName = $("#jform_name"),
             phoneNumber = $("#jform_phone"),
@@ -20,13 +15,6 @@ public class ContactFormPage {
             message = $("#jform_message"),
             sendBtn = $(".button"),
             sendMessageText = $(".alert-message");
-
-    @Step("Переходим к форме обратной связи")
-    public ContactFormPage openContactForm() {
-        aboutTab.hover().$(byText(contactFormName)).hover();
-        contactUsLink.click();
-        return this;
-    }
 
     @Step("Заполняем поле Company/Organization name")
     public ContactFormPage setCompanyName(String value) {
@@ -65,8 +53,8 @@ public class ContactFormPage {
     }
 
     @Step("Проверяем, что сообщение успешно отправлено")
-    public ContactFormPage checkSuccessSendMessageText(String successSendMessageText) {
-        sendMessageText.shouldHave(text(TestData.successSendMessageText));
+    public ContactFormPage checkSuccessSendMessageText(String value) {
+        sendMessageText.shouldHave(text(value));
         return this;
     }
 }

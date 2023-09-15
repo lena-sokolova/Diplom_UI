@@ -11,7 +11,7 @@ import static com.afterlogic.tests.TestData.*;
 public class MainPageTests extends TestBase {
 
     MainPage mainPage = new MainPage();
-    ProductsListPage openProductsListPage = new ProductsListPage();
+    ProductsListPage productsListPage = new ProductsListPage();
     ContactFormPage contactFormPage = new ContactFormPage();
     NewsPage newsPage = new NewsPage();
     PrivacyPolicyPage privacyPolicyPage = new PrivacyPolicyPage();
@@ -24,7 +24,7 @@ public class MainPageTests extends TestBase {
     void successfulOpenMainPageTest() {
         mainPage
                 .openPage()
-                .checkHomePageText();
+                .checkHomePageText(successOpenPageText);
     }
 
     @Test
@@ -34,7 +34,7 @@ public class MainPageTests extends TestBase {
     void checkTabsTitlesTest() {
         mainPage
                 .openPage()
-                .checkTabsTitles();
+                .checkTabsTitles(tabsTitles);
     }
 
     @Test
@@ -43,9 +43,9 @@ public class MainPageTests extends TestBase {
     @DisplayName("Проверка наличия всех продуктов в каталоге")
     void checkProductsTest() {
         mainPage
-                .openPage();
-        openProductsListPage
-                .openAllProductsList()
+                .openPage()
+                .openAllProductsList(productsListName);
+        productsListPage
                 .checkProductTitles(productNames);
     }
 
@@ -54,9 +54,9 @@ public class MainPageTests extends TestBase {
     @DisplayName("Проверка заполнения формы обратной связи")
     void checkContactUsFormTest() {
         mainPage
-                .openPage();
+                .openPage()
+                .openContactForm(contactFormName);
         contactFormPage
-                .openContactForm()
                 .setCompanyName(testData.companyName)
                 .setYourName(testData.userName)
                 .setPhoneNumber(testData.userNumber)
@@ -71,9 +71,9 @@ public class MainPageTests extends TestBase {
     @DisplayName("Проверка перехода в раздел новостей")
     void checkNewsSectionTest() {
         mainPage
-                .openPage();
+                .openPage()
+                .openNews(newsSectionName);
         newsPage
-                .openNews()
                 .checkOpenNewsSection(newsTitle);
     }
 
@@ -82,9 +82,9 @@ public class MainPageTests extends TestBase {
     @DisplayName("Проверка перехода в раздел политики конфиденциальности")
     void checkPrivacyPolicySectionTest() {
         mainPage
-                .openPage();
+                .openPage()
+                .openPrivacyPolicyTerms();
         privacyPolicyPage
-                .openPrivacyPolicyTerms()
                 .checkOpenPrivacyPolicyTerms(privacyPolicyTitleName);
     }
 }
